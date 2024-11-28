@@ -1,0 +1,32 @@
+name: psytrack_patient
+description: "A Test project for wearOS Location interaction"
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+environment:
+  sdk: ^3.3.0
+  flutter: ^3.19.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  geolocator: ^11.0.0
+  location: ^5.0.3
+  hooks_riverpod: ^2.5.1
+  google_maps_flutter: ^2.9.0
+  android_intent_plus: ^4.0.3
+  permission_handler: ^11.3.1
+  firebase_database: ^11.1.6
+  firebase_core: ^3.8.0
+  latlong2: ^0.9.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/

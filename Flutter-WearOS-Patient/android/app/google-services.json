@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "88837193658",
+    "firebase_url": "https://psytrack-2024-default-rtdb.firebaseio.com",
+    "project_id": "psytrack-2024",
+    "storage_bucket": "psytrack-2024.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88837193658:android:31af73b14b6c19b341a783",
+        "android_client_info": {
+          "package_name": "com.psytrack.nurse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw6-1R8QyDrxQi1WR2JQCCCkVGH-acmVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88837193658:android:b58e43f02db3afc341a783",
+        "android_client_info": {
+          "package_name": "com.psytrack.patient"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw6-1R8QyDrxQi1WR2JQCCCkVGH-acmVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
