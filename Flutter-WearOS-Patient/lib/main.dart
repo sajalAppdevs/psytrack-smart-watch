@@ -2,8 +2,8 @@ import 'dart:async';
 import "package:firebase_core/firebase_core.dart";
 import "package:firebase_database/firebase_database.dart";
 import "package:flutter/material.dart";
-import "package:geolocator/geolocator.dart";
 import "package:latlong2/latlong.dart";
+import "package:psytrack_patient/secret_data.dart";
 import "../alert_screen.dart";
 import "../bp_screen.dart";
 import "../no_pulse_screen.dart";
@@ -24,14 +24,13 @@ enum Route {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Permission.phone.request();
-  // Start the global navigation timer when the app starts
   GlobalNavigationTimer.instance.startTimer();
 
   // Initialize Firebase
   await Firebase.initializeApp(
     options: const FirebaseOptions(
       appId: "1:88837193658:android:b58e43f02db3afc341a783",
-      apiKey: "AIzaSyDw6-1R8QyDrxQi1WR2JQCCCkVGH-acmVg",
+      apiKey: apiKey,
       projectId: "psytrack-2024",
       messagingSenderId: "88837193658",
       databaseURL: "https://psytrack-2024-default-rtdb.firebaseio.com",
@@ -46,69 +45,6 @@ void main() async {
   runApp(const MyApp());
 }
 
-// Future<bool> _handleLocationPermissionAndGPS() async {
-//   // Request location permissions
-//   if (!await _requestLocationPermission()) {
-//     return false;
-//   }
-
-//   // Check if GPS is enabled
-//   if (!await _isGPSEnabled()) {
-//     // Prompt the user to enable GPS
-//     return false;
-//   }
-
-//   return true;
-// }
-
-// Future<bool> _requestLocationPermission() async {
-//   var status = await Permission.locationWhenInUse.status;
-//   if (!status.isGranted) {
-//     status = await Permission.locationWhenInUse.request();
-//     if (!status.isGranted) {
-//       if (status.isPermanentlyDenied) {
-//         await openAppSettings();
-//       } else {
-//         debugPrint(
-//             "Location services are disabled. Please enable the services.");
-//       }
-//       return false;
-//     }
-//   }
-
-//   status = await Permission.locationAlways.status;
-//   if (!status.isGranted) {
-//     status = await Permission.locationAlways.request();
-//     if (!status.isGranted) {
-//       if (status.isPermanentlyDenied) {
-//         await openAppSettings();
-//       } else {
-//         debugPrint(
-//             "Location services are disabled. Please enable the services.");
-//       }
-//       return false;
-//     }
-//   }
-
-//   return true;
-// }
-
-// Future<bool> _isGPSEnabled() async {
-//   bool serviceEnabled;
-//   LocationPermission permission;
-
-//   // Test if location services are enabled.
-//   serviceEnabled = await Geolocator.isLocationServiceEnabled();
-//   if (!serviceEnabled) {
-//     // Location services are not enabled, prompt the user to enable them.
-//     debugPrint("GPS is disabled. Please enable the GPS.");
-
-//     return false;
-//   }
-
-//   return true;
-// }
-
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -117,33 +53,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // late final Timer timer;
-
-  // List<String> logs = [];
-
-  // Future<void> getLoc() async {
-  //   final SharedPreferences sp = await SharedPreferences.getInstance();
-  //   await sp.reload();
-  //   logs = sp.getStringList('log') ?? [];
-  //   if (mounted) {
-  //     setState(() {});
-  //   }
-  // }
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   timer = Timer.periodic(const Duration(seconds: 1), (timer) async {
-  //     await getLoc();
-  //   });
-  // }
-
-  // @override
-  // void dispose() {
-  //   timer.cancel();
-  //   super.dispose();
-  // }
-
   final _locationClient = LocationClient();
   LatLng? _currPosition;
   bool _isServiceRunning = false;

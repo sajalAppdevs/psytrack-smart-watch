@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:psytrack_nurse/secret_data.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -50,7 +51,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA8y5K3f6Oe7GHeTdITDZdRnAZPUUsGme8',
+    apiKey: apiKey2,
     appId: '1:88837193658:web:e36eb2fd5daee27941a783',
     messagingSenderId: '88837193658',
     projectId: 'psytrack-2024',
@@ -60,7 +61,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDw6-1R8QyDrxQi1WR2JQCCCkVGH-acmVg',
+    apiKey: apiKey,
     appId: '1:88837193658:android:31af73b14b6c19b341a783',
     messagingSenderId: '88837193658',
     projectId: 'psytrack-2024',

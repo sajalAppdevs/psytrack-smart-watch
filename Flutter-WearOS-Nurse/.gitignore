@@ -10,6 +10,9 @@
 .svn/
 migrate_working_dir/
 
+# Hide key from version control
+secret_data.dart
+
 # IntelliJ related
 *.iml
 *.ipr
