@@ -1,18 +1,116 @@
-# Psytrack - Smart watch for Mental Health Patients
+# Psytrack - Smart Watch for Mental Health Patients
 
-![WhatsApp Image 2024-11-06 at 23 51 56_9d03bc05](https://github.com/user-attachments/assets/3890273e-8bb5-40e7-b819-1ad541829fd5)
+Psytrack is an innovative WearOS-based solution designed to help mental health professionals monitor and support their patients through smart watch technology. The system consists of two main applications: one for patients and another for healthcare providers.
 
-# Nurse Watch 
-![WhatsApp Image 2024-10-20 at 23 13 43_b138d688](https://github.com/user-attachments/assets/eceb4e4f-afca-4c9d-81f6-933029809e73) 
+## Project Components
 
-![WhatsApp Image 2024-10-20 at 22 13 45_82e298f7](https://github.com/user-attachments/assets/46e8a1be-bc84-4ec7-ab7c-df0fc3ef6ca3) ![WhatsApp Image 2024-10-20 at 22 13 45_4f945d02](https://github.com/user-attachments/assets/7379a805-ecf7-4c2e-94bb-30ced7d7b188) ![WhatsApp Image 2024-10-20 at 22 13 45_1b2d2c5e](https://github.com/user-attachments/assets/3ba426d1-50b5-4b88-9ec8-2e496d783e37) ![WhatsApp Image 2024-10-20 at 22 13 45_4b8f3914](https://github.com/user-attachments/assets/acf94356-efe9-4c4d-a7dc-4d79e2fe5cbe) ![WhatsApp Image 2024-10-21 at 01 44 53_e8e6790f](https://github.com/user-attachments/assets/396bb632-bffa-4df5-bc5f-df0e12ab605e)
+### 1. Patient Application (Flutter-WearOS-Patient)
 
-![WhatsApp Image 2024-10-21 at 00 07 12_4fb16ca7](https://github.com/user-attachments/assets/f3c23269-4c9b-4f42-be5f-513e4fc91c39) ![WhatsApp Image 2024-10-21 at 01 44 05_5adddb7d](https://github.com/user-attachments/assets/dc0f1e24-35b2-46a2-85a4-e4a151bd06bd) ![WhatsApp Image 2024-10-21 at 02 13 07_3bb487e3](https://github.com/user-attachments/assets/3b892801-9a38-4591-9c27-248cc47af4cc) ![WhatsApp Image 2024-10-21 at 02 21 03_9777a83f](https://github.com/user-attachments/assets/27ae10e4-3b55-43f5-8a7b-c4b0eb098fd4)
+A WearOS application designed for mental health patients that provides:
 
+- Real-time location tracking
+- Blood pressure monitoring
+- Heart rate monitoring
+- Emergency alert system
+- Patient health status visualization
 
-# Patient Watch
-![WhatsApp Image 2024-10-21 at 01 42 26_cc54d8ec](https://github.com/user-attachments/assets/41b78a7a-e32c-4444-a74e-6399e867d8dc) ![WhatsApp Image 2024-10-21 at 01 42 38_4dab3511](https://github.com/user-attachments/assets/ce9b146f-4c89-48a4-b51e-111521f80a8d) ![WhatsApp Image 2024-11-13 at 16 09 37_e30fc266](https://github.com/user-attachments/assets/54bcc7cf-6c66-44fe-bfee-838e334e57aa)
+### 2. Healthcare Provider Application (Flutter-WearOS-Nurse)
 
+A companion WearOS application for healthcare providers that offers:
 
-This work is still in progress.
-Thank you!
+- Real-time patient location monitoring
+- Patient health status alerts
+- Emergency response coordination
+- Patient schedule management
+- Alert history tracking
+
+## Technical Stack
+
+- **Framework:** Flutter (^3.19.2)
+- **SDK:** Dart (^3.3.0)
+- **Key Dependencies:**
+  - `geolocator`: Real-time location tracking
+  - `google_maps_flutter`: Map visualization
+  - `firebase_core & firebase_database`: Real-time data synchronization
+  - `hooks_riverpod`: State management
+  - `location`: Enhanced location services
+  - `permission_handler`: Device permissions management (Patient app)
+
+## Features
+
+- **Real-time Location Tracking**: Continuous monitoring of patient location with different status indicators
+- **Health Monitoring**: Track vital signs including blood pressure and heart rate
+- **Emergency Alert System**: Quick access to emergency assistance
+- **Secure Data Sync**: Real-time data synchronization between patient and healthcare provider devices
+- **Intuitive UI**: Material Design-based interface optimized for WearOS devices
+
+## Getting Started
+
+### Prerequisites
+
+- Flutter SDK (^3.19.2)
+- Dart SDK (^3.3.0)
+- Android Studio with WearOS emulator or physical WearOS device
+- Firebase account and project setup
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/psytrack-smart-watch.git
+   ```
+
+2. Install dependencies for both applications:
+   ```bash
+   cd Flutter-WearOS-Patient
+   flutter pub get
+   
+   cd ../Flutter-WearOS-Nurse
+   flutter pub get
+   ```
+
+3. Configure Firebase:
+   - Create a new Firebase project
+   - Add Android apps in Firebase console
+   - Download and add google-services.json to respective app directories
+   - Enable Realtime Database in Firebase console
+
+4. Run the applications:
+   ```bash
+   flutter run
+   ```
+
+## Project Structure
+
+```
+├── Flutter-WearOS-Nurse/    # Healthcare provider application
+│   ├── lib/
+│   │   ├── alert_list_screen.dart
+│   │   ├── alert_screen.dart
+│   │   ├── patients_screen.dart
+│   │   ├── schedule_screen.dart
+│   │   └── services/
+│   └── assets/
+│
+├── Flutter-WearOS-Patient/   # Patient application
+│   ├── lib/
+│   │   ├── alert_screen.dart
+│   │   ├── bp_screen.dart
+│   │   ├── no_pulse_screen.dart
+│   │   └── services/
+│   └── assets/
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Flutter team for the excellent WearOS support
+- Firebase for real-time data synchronization
+- All contributors who help improve this project
